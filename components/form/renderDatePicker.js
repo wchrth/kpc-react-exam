@@ -5,13 +5,11 @@ import { Form, DatePicker } from 'antd'
 const formItemLayout = {
   labelCol: {
     sm: { span: 24 },
-    md: { span: 8 },
-    lg: { span: 6 }
+    md: { span: 8 }
   },
   wrapperCol: {
     sm: { span: 24 },
-    md: { span: 16 },
-    lg: { span: 18 }
+    md: { span: 16 }
   }
 }
 

@@ -64,7 +64,7 @@ const CustomerForm = ({ handleSubmit, pristine, submitting }) => {
       </Row>
       <Row gutter={24}>
         <Col md={12}>
-          <Field label="Sex" name="sex" component={renderRadioGroup}>
+          <Field label="Gender" name="gender" component={renderRadioGroup}>
             <Radio value="male">Male</Radio>
             <Radio value="female">Female</Radio>
             <Radio value="unisex">Unisex</Radio>
