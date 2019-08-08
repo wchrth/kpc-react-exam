@@ -19,7 +19,7 @@ const CustomerForm = ({ handleSubmit, pristine, submitting }) => {
     <Form css={form} onSubmit={handleSubmit} labelAlign="left">
       <Row gutter={24}>
         <Col xs={6}>
-          <Field label="Title" name="title" component={renderSelect}>
+          <Field label="Title" name="title" component={renderSelect} required>
             <Option value="Mr.">Mr.</Option>
             <Option value="Mrs.">Mrs.</Option>
             <Option value="Miss">Miss</Option>
@@ -27,10 +27,20 @@ const CustomerForm = ({ handleSubmit, pristine, submitting }) => {
           </Field>
         </Col>
         <Col xs={9}>
-          <Field label="First Name" name="firstName" component={renderInput} />
+          <Field
+            label="First Name"
+            name="firstName"
+            component={renderInput}
+            required
+          />
         </Col>
         <Col xs={9}>
-          <Field label="Last Name" name="lastName" component={renderInput} />
+          <Field
+            label="Last Name"
+            name="lastName"
+            component={renderInput}
+            required
+          />
         </Col>
       </Row>
       <Row gutter={24}>
@@ -39,6 +49,7 @@ const CustomerForm = ({ handleSubmit, pristine, submitting }) => {
             label="Birthday"
             name="birthday"
             component={renderDatePicker}
+            required
           />
         </Col>
         <Col xs={12}>

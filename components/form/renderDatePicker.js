@@ -21,6 +21,7 @@ const renderDatePicker = ({
   children,
   hasFeedback,
   label,
+  required,
   ...rest
 }) => {
   const hasError = meta.touched && meta.invalid
@@ -28,6 +29,7 @@ const renderDatePicker = ({
     <Form.Item
       {...formItemLayout}
       label={label}
+      required={required}
       validateStatus={hasError ? 'error' : 'success'}
       hasFeedback={hasFeedback}
       help={hasError && meta.error}

@@ -20,6 +20,7 @@ const renderRadioGroup = ({
   children,
   hasFeedback,
   label,
+  required,
   ...rest
 }) => {
   const hasError = meta.touched && meta.invalid
@@ -27,6 +28,7 @@ const renderRadioGroup = ({
     <Form.Item
       {...formItemLayout}
       label={label}
+      required={required}
       validateStatus={hasError ? 'error' : 'success'}
       hasFeedback={hasFeedback}
       help={hasError && meta.error}
