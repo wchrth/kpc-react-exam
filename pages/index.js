@@ -1,11 +1,8 @@
 import React from 'react'
+import CustomerList from '../features/CustomerList'
 
 const Index = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+  return <CustomerList />
 }
 
 export default Index
