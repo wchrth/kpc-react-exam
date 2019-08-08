@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { reset } from 'redux-form'
 import styled from '@emotion/styled'
 import CustomerForm from './CustomerForm'
 import CustomerTable from './CustomerTable'
@@ -30,7 +31,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addCustomer: data => dispatch(addCustomer(data)),
+    addCustomer: data => {
+      dispatch(addCustomer(data))
+      dispatch(reset('customer'))
+    },
     deleteCustomer: id => dispatch(deleteCustomer(id))
   }
 }
