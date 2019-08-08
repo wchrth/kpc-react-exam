@@ -87,4 +87,21 @@ const CustomerForm = ({ handleSubmit, pristine, submitting }) => {
   )
 }
 
-export default reduxForm({ form: 'customer' })(CustomerForm)
+const validate = values => {
+  let errors = {}
+  if (!values.title) {
+    errors.title = 'Required'
+  }
+  if (!values.firstName) {
+    errors.firstName = 'Required'
+  }
+  if (!values.lastName) {
+    errors.lastName = 'Required'
+  }
+  if (!values.birthday) {
+    errors.birthday = 'Required'
+  }
+  return errors
+}
+
+export default reduxForm({ form: 'customer', validate })(CustomerForm)
