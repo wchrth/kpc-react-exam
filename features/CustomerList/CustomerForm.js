@@ -2,12 +2,13 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { Field, reduxForm } from 'redux-form'
 import { Row, Col, Form, Select, Radio, Button } from 'antd'
+import { isValidPhoneNumber } from 'react-phone-number-input'
 import renderInput from '../../components/form/renderInput'
 import renderSelect from '../../components/form/renderSelect'
 import renderDatePicker from '../../components/form/renderDatePicker'
 import renderRadioGroup from '../../components/form/renderRadioGroup'
 import renderPhoneInput from '../../components/form/renderPhoneInput'
-import { isValidPhoneNumber } from 'react-phone-number-input'
+import { normalizeMoney } from '../../utils/normalize'
 
 const { Option } = Select
 
@@ -86,6 +87,18 @@ const CustomerForm = ({ handleSubmit, pristine, submitting }) => {
       <Row gutter={24}>
         <Col md={12}>
           <Field label="Passport No" name="passport" component={renderInput} />
+        </Col>
+      </Row>
+      <Row gutter={24}>
+        <Col md={12}>
+          <Field
+            label="Expected Salary"
+            name="expectedSalary"
+            addonAfter="THB"
+            component={renderInput}
+            normalize={normalizeMoney}
+            required
+          />
         </Col>
       </Row>
       <Button
