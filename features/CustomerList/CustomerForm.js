@@ -6,6 +6,8 @@ import renderInput from '../../components/form/renderInput'
 import renderSelect from '../../components/form/renderSelect'
 import renderDatePicker from '../../components/form/renderDatePicker'
 import renderRadioGroup from '../../components/form/renderRadioGroup'
+import renderPhoneInput from '../../components/form/renderPhoneInput'
+import { isValidPhoneNumber } from 'react-phone-number-input'
 
 const { Option } = Select
 
@@ -73,7 +75,12 @@ const CustomerForm = ({ handleSubmit, pristine, submitting }) => {
       </Row>
       <Row gutter={24}>
         <Col md={12}>
-          <Field label="Mobile Phone" name="phone" component={renderInput} />
+          <Field
+            label="Mobile Phone"
+            name="phone"
+            component={renderPhoneInput}
+            required
+          />
         </Col>
       </Row>
       <Button
@@ -100,6 +107,11 @@ const validate = values => {
   }
   if (!values.birthday) {
     errors.birthday = 'Required'
+  }
+  if (!values.phone) {
+    errors.phone = 'Required'
+  } else if (!isValidPhoneNumber(values.phone)) {
+    errors.phone = 'Invalid phone number'
   }
   return errors
 }
