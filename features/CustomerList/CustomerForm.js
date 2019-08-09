@@ -83,6 +83,11 @@ const CustomerForm = ({ handleSubmit, pristine, submitting }) => {
           />
         </Col>
       </Row>
+      <Row gutter={24}>
+        <Col md={12}>
+          <Field label="Passport No" name="passport" component={renderInput} />
+        </Col>
+      </Row>
       <Button
         type="primary"
         htmlType="submit"
