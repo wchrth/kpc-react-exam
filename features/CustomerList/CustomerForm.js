@@ -131,6 +131,11 @@ const validate = values => {
   } else if (!isValidPhoneNumber(values.phone)) {
     errors.phone = 'Invalid phone number'
   }
+  if (!values.expectedSalary) {
+    errors.expectedSalary = 'Required'
+  } else if (!/^[0-9]+(\.[0-9]{1,2})?$/.test(values.expectedSalary)) {
+    errors.expectedSalary = 'Invalid salary'
+  }
   return errors
 }
 
